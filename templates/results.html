@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-4">Analysis Summary</h2>
+
+<ul class="list-group mb-4">
+    {% for sentiment, count in summary.items %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ sentiment }}
+            <span class="badge bg-primary rounded-pill">{{ count }}</span>
+        </li>
+    {% endfor %}
+</ul>
+
+ <h3>Sentiment Distribution</h3>
+<img src="data:image/png;base64,{{ chart }}" alt="Sentiment Chart"/>
+
+<hr>
+<h3>Word Clouds</h3>
+<div class="row">
+  <div class="col-md-6">
+    <h5>Positive</h5>
+    <img src="data:image/png;base64,{{ wordcloud_pos }}" class="img-fluid" />
+  </div>
+  <div class="col-md-6">
+    <h5>Negative</h5>
+    <img src="data:image/png;base64,{{ wordcloud_neg }}" class="img-fluid" />
+  </div>
+</div>
+
+<hr>
+<h3>Most Common Words</h3>
+<div class="row">
+  <div class="col-md-6">
+    <h5>Positive Comments</h5>
+    <img src="data:image/png;base64,{{ top_words_pos }}" class="img-fluid" />
+  </div>
+  <div class="col-md-6">
+    <h5>Negative Comments</h5>
+    <img src="data:image/png;base64,{{ top_words_neg }}" class="img-fluid" />
+  </div>
+</div>
+
+
+<a href="{% url 'download_pdf' %}" class="btn btn-outline-primary mt-3">Download PDF Report</a>
+{% endblock %}

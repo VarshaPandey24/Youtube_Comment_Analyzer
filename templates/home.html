@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-3">YouTube Video Sentiment Analysis</h2>
+<form method="post" action="{% url 'analyze' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="youtube_url" class="form-label">Paste YouTube Video URL</label>
+        <input type="text" name="youtube_url" id="youtube_url" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-success">Analyze Comments</button>
+</form>
+{% endblock %}
