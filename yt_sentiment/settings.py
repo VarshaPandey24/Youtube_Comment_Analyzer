@@ -29,7 +29,9 @@ SECRET_KEY = 'django-insecure-zt*0svjp@wsd36w&8%z#)t-pe@xz%86#l@i@rhj#il7a(*u^z4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+      'youtube-comment-analyzer-dcgl.onrender.com'
+]
 
 # Application definition
 
