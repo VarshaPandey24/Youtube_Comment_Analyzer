@@ -1,0 +1,9 @@
+Django>=4.2
+psycopg2-binary>=2.9
+nltk>=3.8
+pandas>=2.1
+fpdf>=1.7
+wordcloud>=1.8
+matplotlib>=3.7
+seaborn>=0.12
+python-decouple>=3.8
