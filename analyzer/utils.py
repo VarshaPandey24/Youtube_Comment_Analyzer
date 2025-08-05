@@ -9,6 +9,7 @@ from collections import Counter
 import io 
 import matplotlib.pyplot as plt
 import base64
+from django.conf import settings
 
 sia = SentimentIntensityAnalyzer()
 
@@ -37,7 +38,7 @@ def get_sentiment(comment):
 
 def get_comments(video_id):
     from googleapiclient.discovery import build
-    api_key = 'AIzaSyDV9kcpMoTthsm8fHdT5lA_5Kld1ZaFx6Q'
+    api_key =settings.GOOGLE_API_KEY
     youtube = build('youtube', 'v3', developerKey=api_key)
     comments, likes = [], []
     token = None
