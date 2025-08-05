@@ -7,3 +7,4 @@ wordcloud>=1.8
 matplotlib>=3.7
 seaborn>=0.12
 python-decouple>=3.8
+gunicorn>=20.1.0
